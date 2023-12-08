@@ -1,7 +1,7 @@
 import React from "react";
-import './logEmail.scss';
+import './regHome.scss';
 
-const LogUsername:React.FC = () => {
+const RegHome:React.FC = () => {
 
     return (
         <section>
@@ -10,4 +10,4 @@ const LogUsername:React.FC = () => {
     );
 }
 
-export default LogUsername;
+export default RegHome;
