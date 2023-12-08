@@ -1,9 +1,45 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import './App.scss';
+import { Link, Route, Routes } from "react-router-dom"
+import { useState, useEffect } from 'react';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+import Home from './pages/home/home';
+import Leaderboard from './pages/leaderboard/leaderboard';
+import RegUsername from './pages/register/regUsername/regUsername';
+import RegPassword from './pages/register/regPassword/regPassword';
+import RegEmail from './pages/register/regEmail/regEmail';
+import RegAge from './pages/register/regAge/regAge';
+import LogUsername from './pages/login/logUsername/logUsername';
+import LogPassword from './pages/login/logPassword/logPassword';
+import LogEmail from './pages/login/logEmail/logEmail';
+import LogCaptcha from './pages/login/logCaptcha/logCaptcha';
+
+const App: React.FC = () => {
+  // const [loading, setLoading] = useState<boolean>(true);
+
+  return (
+    <>
+      <header>
+        <nav>
+        </nav>
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/register/username" element={<RegUsername />} />
+          <Route path="/register/password" element={<RegPassword />} />
+          <Route path="/register/email" element={<RegEmail />} />
+          <Route path="/register/age" element={<RegAge />} />
+          <Route path="/login/username" element={<LogUsername />} />
+          <Route path="/login/password" element={<LogPassword />} />
+          <Route path="/login/email" element={<LogEmail />} />
+          <Route path="/login/captcha" element={<LogCaptcha />} />
+        </Routes>
+      </main>
+      <footer>
+      </footer>
+    </>
+  );
+}
+
+export default App;
