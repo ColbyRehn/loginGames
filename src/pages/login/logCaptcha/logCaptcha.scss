@@ -1,0 +1,31 @@
+@mixin row() {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin col() {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+#logCaptcha-section {
+    
+    img {
+        max-width: 500px;
+        width: 100%;
+        max-height: 500px;
+        height: 100%;
+        margin: 20px;
+    }
+
+    #images {
+        @include row();
+
+    }
+}

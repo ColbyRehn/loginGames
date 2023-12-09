@@ -1,0 +1,76 @@
+@mixin row() {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin col() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#logUsername-section {
+    #row-boxes {
+        @include row();
+    }
+
+    .box {
+        border: 2px;
+        border-style: solid;
+        border-color: black;
+        padding: 5px;
+        margin-bottom: 3px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .highlighted-box {
+        border: 3px;
+        border-style: solid;
+        border-color: red;
+        padding: 5px;
+        margin-bottom: 3px;
+        width: 30px;
+        height: 30px;
+    }
+
+    button {
+        margin-top: 50px;
+    }
+    
+    @keyframes move { 
+        0%   {
+          transform: rotate(-42deg);
+        }
+        50%  {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(42deg);}
+    }
+
+    #cannon {
+        @include col();
+        margin-top: 100px;
+        border: 2px;
+        border-style: solid;
+        border-color: black;
+        padding: 5px;
+        margin-bottom: 3px;
+        width: 20px;
+        height: 70px;
+        animation: move 2s linear alternate infinite;
+    }
+
+    #chamber {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

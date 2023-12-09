@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 const RegAge:React.FC = () => {
     const [age,setAge] = useState<number>(0)
     // const matchAge = Math.floor(Math.random()*1000)
-    // const matchAge = 100
-    const [matchAge, setMatchAge] =useState<number>(Math.floor(Math.random()*1000));
+    const matchAge = 100
+    // const [matchAge, setMatchAge] =useState<number>(Math.floor(Math.random()*1000));
     const [blackout, setBlackout] = useState<boolean>(false);
     const [guessCorrect, setGuessCorrect] =useState<boolean>(false);
     const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
@@ -44,7 +44,16 @@ const RegAge:React.FC = () => {
             }
             
         } else {
-            window.alert("The hottest")
+            const startTimeStr = localStorage.getItem("regStartTime");
+            if (! startTimeStr) {
+                return
+            }
+            const startTime = parseInt(startTimeStr)
+            const finalTime = Date.now();
+
+            const diff = finalTime - startTime;
+            
+            window.alert("You did it! You found it and finished registering your account! You only took "+diff/1000+" seconds")
             if (intervalId){
                 clearInterval(intervalId)
             }
@@ -70,7 +79,7 @@ const RegAge:React.FC = () => {
                     <p>Age: {age}</p>
                     <button onClick={(e) => isClose()}>Check age</button>
                     {guessCorrect ? 
-                        <Link className="link" to={`/register/`} onClick={(e) => localStorage.setItem("regAge", age.toString())}>Finish registering</Link>
+                        <Link className="link" to={`/`} onClick={(e) => localStorage.setItem("regAge", age.toString())}>Finish registering</Link>
                         : <p>Your age is not valid to continue 🥱</p>
                     }
                 </section>

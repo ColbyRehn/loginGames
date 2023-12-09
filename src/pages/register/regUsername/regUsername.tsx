@@ -23,7 +23,7 @@ const RegUsername:React.FC = () => {
             // console.log(element)
             // console.log("------")
             // }
-        },3000);
+        },1000);
         return () => clearInterval(intervalId);
     }, [allowInput])
 
@@ -31,8 +31,9 @@ const RegUsername:React.FC = () => {
         
     },[allowInput])
     const usernameInput = (name:string) =>{
-        if(allowInput) {
-            if (name.length <=7) {
+        if(allowInput && name.match("^(?!.*(.).*\x01)[a-z]+$")) {
+            if (name.length <=7 )
+            {
                 setRegUsername(name)
                 if (name.length == 7) {
                     localStorage.setItem('regUsername',name)
@@ -46,9 +47,9 @@ const RegUsername:React.FC = () => {
         <section>
             <h1>Username</h1>
             <p>Only type into the box when I am happy</p>
-            <p>* Must be length 7</p>
+            <p>* Must be length 7, no duplicated characters, all characters must be lowercases</p>
             
-            <input id="color-input" type="text" onChange={(e) => usernameInput(e.target.value)} value = {regUsername}/>
+            <input id="color-input" type="text" pattern="[a-zA-Z]"  onChange={(e) => usernameInput(e.target.value)} value = {regUsername}/>
             {allowInput ? <p id="smile">😊</p>
             : <p id="smile">😡</p>
             }
