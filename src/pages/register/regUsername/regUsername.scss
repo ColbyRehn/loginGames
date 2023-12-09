@@ -1,0 +1,40 @@
+@mixin col() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+@mixin row() {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#regUsername-section {
+    width: 100vw;
+    height: 100vh;
+    @include col();
+
+
+}
+
+#color-input {
+    border-width: 3px;
+    //border-color: green;
+    border-style: solid;
+}
+
+#color-input-reject {
+    border-width: 5px;
+    border-color: red;
+    border-style: solid;
+}
+
+#smile {
+    font-size: 5rem;
+}
+

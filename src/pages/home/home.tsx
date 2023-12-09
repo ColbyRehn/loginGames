@@ -1,15 +1,17 @@
 import React from "react";
 import './home.scss';
+import { Link } from 'react-router-dom'
 
 const Home:React.FC = () => {
 
     return (
-        <section id="home-section">
+        <section>
             <h1>The Login Games 😈</h1>
             <p>⭐⭐⭐⭐⭐ "Who would have thought logging in would be this much fun" - The Times</p>
-            <a href="/register">Register a new account</a>
-            <a href="/login">Login</a>
-            <a href="/leaderboard">Leaderboard</a>
+            <Link className="link" to={`/register`}>Register a new account</Link>
+            <Link className="link" to={`/login`}>Login</Link>
+            <Link className="link" to={`/leaderboard`}>Leaderboard</Link>
+
         </section>
     );
 }
