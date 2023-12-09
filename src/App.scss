@@ -14,7 +14,7 @@
     text-align: center;
 }
 
-.link {
+.link, button {
     @include col();
     background-color: black;
     color: white;
@@ -24,7 +24,7 @@
     margin: 5px;
 }
 
-.link:hover {
+.link:hover, button:hover {
     opacity: 0.8;
 }
 

@@ -1,0 +1,43 @@
+
+@mixin row() {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin col() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#regEmail-section {
+    .box {
+        border: 2px;
+        border-style: solid;
+        border-color: black;
+        padding: 5px;
+        margin-bottom: 3px;
+        width: 30px;
+    }
+
+    .highlighted-box {
+        border: 2px;
+        border-style: solid;
+        background-color: rgb(170, 255, 0);
+        border-color:  black;
+        padding: 5px;
+        margin-bottom: 3px;
+        width: 30px;
+    }
+
+    #columns {
+        @include row();
+        flex-wrap: wrap;
+        max-width: 800px;
+    }
+}

@@ -35,7 +35,7 @@ const RegUsername:React.FC = () => {
             if (name.length <=7) {
                 setRegUsername(name)
                 if (name.length == 7) {
-                    localStorage.setItem('regUsername',"name")
+                    localStorage.setItem('regUsername',name)
                 }
             }
         } else {
