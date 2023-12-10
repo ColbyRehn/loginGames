@@ -7,9 +7,9 @@ const Home:React.FC = () => {
     return (
         <section>
             <h1>The Login Games 😈</h1>
-            <p>⭐⭐⭐⭐⭐ "Who would have thought logging in would be this much fun" - The Times</p>
+            <p>Your data is not safe with us. Trust us.</p>
             <Link className="link" to={`/register`}>Register a new account</Link>
-            <Link className="link" to={`/login`}>Login</Link>
+            <Link className="link" to={`/login`}>Login a registered account</Link>
             <Link className="link" to={`/leaderboard`}>Leaderboard</Link>
 
         </section>

@@ -21,8 +21,6 @@ const App: React.FC = () => {
   return (
     <>
       <header>
-        <nav>
-        </nav>
       </header>
       <main>
         <Routes>
@@ -41,6 +39,7 @@ const App: React.FC = () => {
         </Routes>
       </main>
       <footer>
+        <p>By Colby & Zijie</p>
       </footer>
     </>
   );

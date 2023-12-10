@@ -53,7 +53,25 @@ const RegAge:React.FC = () => {
 
             const diff = finalTime - startTime;
             
-            window.alert("You did it! You found it and finished registering your account! You only took "+diff/1000+" seconds")
+            window.alert("You registered an account! You only took "+diff/1000+" seconds in total. Score is recoreded on leaderboard.")
+            
+            // add to leaderboard
+            const userData = {
+                "name" : localStorage.getItem("regUsername"),
+                "password":localStorage.getItem("regPassword"),
+                "email":localStorage.getItem("regEmail"),
+                "time": diff/1000
+            }
+            // Store login finish time
+            let leader = localStorage.getItem("regLeaderboard")
+            if (!leader){
+                localStorage.setItem("regLeaderboard",JSON.stringify([userData]))
+            } else {
+                const leader_list = JSON.parse(leader)
+                leader_list.push(userData)
+                localStorage.setItem("regLeaderboard",JSON.stringify(leader_list))
+            }
+            
             if (intervalId){
                 clearInterval(intervalId)
             }

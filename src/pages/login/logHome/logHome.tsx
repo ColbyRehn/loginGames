@@ -15,7 +15,7 @@ const LogHome:React.FC = () => {
             <p>Your email: {localStorage.getItem("regEmail")}</p>
 
             {localStorage.getItem("regUsername") && localStorage.getItem("regPassword") && localStorage.getItem("regEmail") ?
-                <Link className="link" to={`/login/username`}>LETS GOOO</Link>
+                <Link className="link" onClick={(e) => {localStorage.setItem("logStartTime", Date.now().toString())}} to={`/login/username`}>LETS GOOO</Link>
                 :
                 <Link className="link" to={`/register`}>Register an account 😡</Link>
             }

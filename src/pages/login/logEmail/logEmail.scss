@@ -1,0 +1,54 @@
+#logEmail-section {
+
+
+    #Grid {
+        display: flex;
+        flex-direction: row;
+        justify-content: row;
+        align-items: center;
+        text-align: center;
+        flex-wrap: wrap;
+        width: 80vw;
+        
+    }
+
+    #row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+
+    .box {
+            
+            border: 2px;
+            border-style: solid;
+            border-color: black;
+            padding: 5px;
+            width: 20px;
+            height: 20px;
+    }
+
+    .box-heighlight {
+        border: 2px;
+        border-style: solid;
+        border-color: red;
+        padding: 5px;
+        width: 20px;
+        height: 20px;
+    
+    }
+
+    .box-block {
+        border: 2px;
+        border-style: solid;
+        border-color: blue;
+        padding: 5px;
+        width: 20px;
+        height: 20px;
+
+    }
+
+}

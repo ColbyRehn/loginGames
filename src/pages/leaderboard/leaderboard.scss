@@ -1,0 +1,30 @@
+#leaderboard-section {
+    height: initial;
+
+    #Scores {
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .Board {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        border: 1px;
+        border-color: black;
+    }
+
+    .row {
+        margin: 5px;
+        border: 1px;
+        border-style: solid;
+        border-color: black;
+}   
+}

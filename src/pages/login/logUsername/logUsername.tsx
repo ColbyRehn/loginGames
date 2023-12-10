@@ -13,6 +13,7 @@ const LogUsername:React.FC = () => {
     } 
     const [highlightIndex, setHighlightIndex] = useState<number>(8)
 
+    
     useEffect(() => {
         // Toggle allowInput every 1 seconds
         const intervalId = setInterval(() => {
@@ -67,7 +68,7 @@ const LogUsername:React.FC = () => {
                 }
             </div>
             {logingUsername.join("") === username? 
-            <Link to="login/password" className="link" >Proceed to Password</Link>
+            <Link to={`/login/password`} className="link" >Proceed to Password</Link>
             :
             <button onClick={(e) => gunFire()}>Fire the inaccurate cannon!</button>
             }
